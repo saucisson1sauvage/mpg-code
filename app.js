@@ -8,25 +8,29 @@ $(document).ready(function () {
         $('#badNote').parent().hide();
         $('#movies-container').empty();
 
+        const filters = {
+            origine: origineFilm,
+            niveau: templateSelector === "banger" ? "Classic" : templateSelector === "navet" ? "Navet" : null,
+            minNote: templateSelector === "banger" ? goodNote : null,
+            maxNote: templateSelector === "navet" ? badNote : null
+        };
+
         $.ajax({
             url: 'http://localhost:3332/movies',
             type: 'GET',
             dataType: 'json',
+            data: filters,
             success: function (moviesData) {
                 const container = $('#movies-container');
 
                 $.each(moviesData, function (i, movie) {
-                    if (origineFilm !== "TOUS" && movie.origine !== origineFilm) {
-                        return;
-                    }
-
                     let templateId;
 
-                    if (templateSelector === 'banger' && movie.note >= goodNote) {
+                    if (templateSelector === 'banger') {
                         templateId = 'banger';
-                    } else if (templateSelector === 'navet' && movie.note <= badNote) {
+                    } else if (templateSelector === 'navet') {
                         templateId = 'navets';
-                    } else if (templateSelector === 'all') {
+                    } else {
                         if (movie.note >= goodNote) {
                             templateId = 'banger';
                         } else if (movie.note <= badNote) {
