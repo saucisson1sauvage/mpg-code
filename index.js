@@ -22,13 +22,13 @@ app.get("/movies", (req, res) => {
     if (niveau) {
         if (niveau === "Classic") {
             query += " AND note >= ?";
-            params.push(4); // Assuming "Classic" means note >= 4
+            params.push(4); 
         } else if (niveau === "Navet") {
             query += " AND note <= ?";
-            params.push(2); // Assuming "Navet" means note <= 2
+            params.push(2); 
         } else if (niveau === "Standard") {
             query += " AND note > ? AND note < ?";
-            params.push(2, 4); // Assuming "Standard" means 2 < note < 4
+            params.push(2, 4); 
         }
     }
 
