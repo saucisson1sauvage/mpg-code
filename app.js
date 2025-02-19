@@ -3,7 +3,7 @@ $(document).ready(function () {
         const goodNote = $('#goodNote').val();
         const badNote = $('#badNote').val();
         const origineFilm = $('#FiltrePays').val();
-
+        let currentMovieId = null;
         $('#goodNote').parent().hide();
         $('#badNote').parent().hide();
         $('#movies-container').empty();
@@ -77,17 +77,17 @@ $(document).ready(function () {
     }
 
     $('#loadMoviesButton').on('click', function () {
-        $(this).hide();
+
         loadMovies('all');
     });
 
     $('#importBanger').on('click', function () {
-        $(this).hide();
+
         loadMovies('banger');
     });
 
     $('#importNavets').on('click', function () {
-        $(this).hide();
+
         loadMovies('navet');
     });
 
