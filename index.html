@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Films Français</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Films Classiques Français</h1>
+
+    <div class="buttonsChoice">
+        <button id="loadMoviesButton">Voir Films</button>
+        <button id="importBanger">Importer les classiques</button>
+        <button id="importNavets">Importer les navets</button>
+        <button id="clearButton">Clear</button>
+    </div>
+
+    <p>Choisissez une note pour classer les films entre excellents et navets de 1 à 5</p>
+
+    <div>
+        <input type="range" id="goodNote" name="goodNote" min="0" max="5" value="4" />
+        <label for="goodNote">Excellents</label>
+    </div>
+
+    <div>
+        <input type="range" id="badNote" name="badNote" min="0" max="5" value="2" />
+        <label for="badNote">Navets</label>
+    </div>
+
+    <select id="FiltrePays">
+        <option value="" disabled selected>Origine du film</option>
+        <option value="TOUS">TOUS</option>
+        <option value="France">France</option>
+        <option value="Angleterre">Angleterre</option>
+        <option value="Belgique">Belgique</option>
+        <option value="Pays-Bas">Pays-Bas</option>
+    </select>
+
+    <h2>Ajouter un film</h2>
+    <form id="add-movie-form">
+        <input type="text" id="nom" placeholder="Nom du film" required>
+        <input type="text" id="dateDeSortie" placeholder="Année de sortie" required>
+        <input type="text" id="realisateur" placeholder="Réalisateur" required>
+        <input type="number" step="0.1" id="note" placeholder="Note critique (1-5)" required>
+        <input type="number" step="0.1" id="notePublic" placeholder="Note publique (1-5)">
+        <input type="text" id="compagnie" placeholder="Compagnie" required>
+        <textarea id="description" placeholder="Description"></textarea>
+        <select id="origine">
+            <option value="France">France</option>
+            <option value="Angleterre">Angleterre</option>
+            <option value="Belgique">Belgique</option>
+        </select>
+        <input type="text" id="lienImage" placeholder="Chemin de l'image (ex: img/film.jpg)" required>
+        <button type="submit">Ajouter le film</button>
+    </form>
+
+    <div id="movies-container" class="movies-grid"></div>
+
+    <template id="movie-template">
+        <div class="movie-card">
+            <h2 class="nom"></h2>
+            <img class="lienImage" src="" alt="">
+            <p>Année : <span class="dateDeSortie"></span></p>
+            <p>Réalisateur : <span class="realisateur"></span></p>
+            <p>Note de la critique : <span class="note"></span></p>
+            <p>Note du public : <span class="notePublic"></span></p>
+            <p>Différence : <span class="noteDifference"></span></p>
+            <p>Compagnie : <span class="compagnie"></span></p>
+            <p class="description"></p>
+            <button class="delete-movie">🗑️ Supprimer</button>
+        </div>
+    </template>
+
+    <template id="banger">
+        <div class="movie-card_banger">
+            <div class="content">
+                <h2 class="nom"></h2>
+                <img class="lienImage" src="" alt="">
+                <p>Année : <span class="dateDeSortie"></span></p>
+                <p>Réalisateur : <span class="realisateur"></span></p>
+                <p>Note de la critique : <span class="note"></span></p>
+                <p>Note du public : <span class="notePublic"></span></p>
+                <p>Différence : <span class="noteDifference"></span></p>
+                <p>Compagnie : <span class="compagnie"></span></p>
+                <p class="description"></p>
+                <button class="delete-movie">🗑️ Supprimer</button>
+            </div>
+        </div>
+    </template>
+
+    <template id="navets">
+        <div class="movie-card">
+            <div class="content">
+                <h2 class="nom"></h2>
+                <img class="lienImage" src="" alt="">
+                <p><strong>Ne vaut même pas la peine</strong></p>
+                <button class="delete-movie">🗑️ Supprimer</button>
+            </div>
+        </div>
+    </template>
+
+    <script src="app.js"></script>
+</body>
+</html>

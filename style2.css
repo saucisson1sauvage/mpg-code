@@ -1,0 +1,43 @@
+body {
+    text-align: center;
+    margin: 20px;
+}
+
+.movies-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.movie-card_banger {
+    width: 250px;
+    background: white;
+    border: 2px solid yellow;
+}
+
+.movie-card_banger img {
+    width: 75%;
+    height: auto;
+}
+
+.movie-card, .movie-card_banger {
+    text-align: left;
+}
+
+#FiltrePays {
+    margin-top: 60px;
+    width: 150px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 10%;
+}
+
+.movie-card, .movie-card_banger {
+    padding: 20px;
+}
+
+.movie-card img, .movie-card_banger img {
+    max-width: 100px;
+    height: auto;
+}
