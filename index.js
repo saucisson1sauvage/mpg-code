@@ -7,9 +7,9 @@ const PORT = 3332;
 
 app.use(cors());
 app.use(express.json());
-
+// Supprimer ou commenter la partie du serveur gérant 'niveau'
 app.get("/movies", (req, res) => {
-    const { origine, niveau, minNote, maxNote } = req.query;
+    const { origine, minNote, maxNote } = req.query; // Retirer 'niveau'
 
     let query = "SELECT * FROM movies WHERE 1=1";
     const params = [];
@@ -17,19 +17,6 @@ app.get("/movies", (req, res) => {
     if (origine && origine !== "TOUS") {
         query += " AND origine = ?";
         params.push(origine);
-    }
-
-    if (niveau) {
-        if (niveau === "Classic") {
-            query += " AND note >= ?";
-            params.push(4); 
-        } else if (niveau === "Navet") {
-            query += " AND note <= ?";
-            params.push(2); 
-        } else if (niveau === "Standard") {
-            query += " AND note > ? AND note < ?";
-            params.push(2, 4); 
-        }
     }
 
     if (minNote) {

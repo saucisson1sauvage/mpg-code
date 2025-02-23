@@ -8,12 +8,11 @@ $(document).ready(function () {
         $('#badNote').parent().hide();
         $('#movies-container').empty();
 
-        const filters = {
-            origine: origineFilm,
-            niveau: templateSelector === "banger" ? "Classic" : templateSelector === "navet" ? "Navet" : null,
-            minNote: templateSelector === "banger" ? goodNote : null,
-            maxNote: templateSelector === "navet" ? badNote : null
-        };
+const filters = {
+    origine: origineFilm,
+    minNote: templateSelector === "banger" ? goodNote : null,
+    maxNote: templateSelector === "navet" ? badNote : null
+};
 
         $.ajax({
             url: 'http://localhost:3332/movies',
