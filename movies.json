@@ -3,8 +3,8 @@
     "nom": "À bout de souffle",
     "dateDeSortie": "1960",
     "realisateur": "Jean-Luc Godard",
-    "notePublic": 3.8,
-    "note": 5.0,
+    "notepPublic": 3.8,
+"note": 5.0,
     "compagnie": "Société Nouvelle de Cinématographie",
     "description": "L'histoire d'un jeune criminel qui se cache à Paris et tombe amoureux d'une jeune américaine. Un classique de la Nouvelle Vague française.",
     "origine": "France",
@@ -14,8 +14,8 @@
     "nom": "Les Quatre Cents Coups",
     "dateDeSortie": "1959",
     "realisateur": "François Truffaut",
-    "note": 0.2,
-"notePublic": 0.8,
+    "note": 4.5,
+"notePublic": 4.1,
     "compagnie": "Les Films du Carrosse",
     "description": "Ce film semi-autobiographique raconte l'histoire d'un jeune garçon à Paris qui lutte contre les négligences des adultes et son passage à l'adolescence.",
     "origine": "France",
@@ -175,14 +175,14 @@
     "compagnie": "Warner Bros. Pictures",
     "description": "Harry se prépare à une guerre totale contre Voldemort et ses adeptes. Avec un peu d'aide de ses amis, il cherche à exposer la vérité sur le retour de Voldemort et à prendre sa place de leader au sein de l'Ordre du Phénix.",
     "origine": "Angleterre",
-    "lienImage": "img/harrypotterordrephenix.jpg"
+    "lienImage": "img/harrypotterordrephenix.webp"
   },
   {
     "nom": "Les Misérables",
     "dateDeSortie": "2012",
     "realisateur": "Tom Hooper",
-    "note": 0.2,
- "notePublic": 0.6,
+    "note": 2.3,
+ "notePublic": 3.1,
     "compagnie": "Universal Pictures",
     "description": "Adaptation du célèbre roman de Victor Hugo, cette comédie musicale épique raconte l'histoire de Jean Valjean, un ex-prisonnier en quête de rédemption, poursuivi par l'impitoyable inspecteur Javert.",
     "origine": "Angleterre",
@@ -321,4 +321,5 @@
     "lienImage": "img/antoniasline.webp"
   }
 ]
+
 
